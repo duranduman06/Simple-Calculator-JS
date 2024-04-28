@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.html{
+    font-size: 10px;
+}
+
+.body{
+    margin:0;
+    width: 100vh;
+    height: 100vh;
+}
+
+.calculator{
+    background-color: #ccc;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size :1.3rem;
+    width: 300px;
+    height: 450px;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+
+.calculator-input{
+    background-color: black;
+    border:none;
+    border-radius: 5px;
+    width: 100%;
+    height: 80px;
+    font-size: 3rem;
+    padding-left: 10px;
+    padding-right: 10px;
+    color:#ccc;
+    text-align: right;
+    overflow: hidden;
+}
+.sign{
+    width: 50px;
+    height: 40px;
+    border-color: 2px solid rgb(0, 0, 0);
+    background-color: rgb(243, 180, 255);
+    color:rgb(0, 0, 0);
+    border-radius: 5px;
+    margin: 10px 2px 5px 2px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.calculator-keys{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 10px;
+    padding: 10px;
+}
+.sign.operator {
+    background-color: rgb(219, 255, 161);
+}
+
+.sign.operator:hover {
+    border: 1px solid #ccc;
+}
+
+.sign:hover {
+    border: 3px solid #000000;
+}
+
+.clear{
+    background-color: rgb(255, 135, 135);
+}
+
+.sign.equal{
+    background-color: rgb(217, 255, 206);
+    height: 95%;
+    /* 2/4 başlangı. 6/5 bitiş*/
+    grid-area : 2 / 4 / 6 / 5 ; 
+}
