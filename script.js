@@ -10,7 +10,7 @@ function updateDisplay(){
     input.textContent = displayValue;
 }
 
-keys.addEventListener("click",function(e){
+keys.addEventListener("click",(e)=>{
     const element = e.target;
 
     if(!element.matches('button')){
@@ -38,7 +38,7 @@ keys.addEventListener("click",function(e){
     updateDisplay();
 });
 
-function ifInputOperator(nextoperator){
+const ifInputOperator = (nextoperator)=>{
     const value = parseFloat(displayValue);
     
     if(firstValue === null){
@@ -53,23 +53,22 @@ function ifInputOperator(nextoperator){
     operator = nextoperator;
 }
 
-function calculateAllInput(first,second,op){
-   
-switch(op) {
-    case "+":
-       return displayValue = first + second;
-    case "-":
-        return displayValue = first - second;
-    case "x":
-        return displayValue = first * second;
-    case "/":
-        return displayValue = first / second;
-    default:
-        return second;
-  }
+const calculateAllInput = (first,second,op) =>{
+    switch(op) {
+        case "+":
+        return displayValue = first + second;
+        case "-":
+            return displayValue = first - second;
+        case "x":
+            return displayValue = first * second;
+        case "/":
+            return displayValue = first / second;
+        default:
+            return second;
+    }
 }
 
-function ifInputNum(num){
+const ifInputNum = (num) =>{
     if (waitingForSecondValue){
         displayValue = num;
         waitingForSecondValue = false;
@@ -80,14 +79,14 @@ function ifInputNum(num){
     console.log(displayValue,firstValue,operator,waitingForSecondValue);
 }
 
-function ifInputDecimal(){
+const ifInputDecimal = () =>{
     if(!displayValue.includes(".")){
         displayValue += ".";
     }    
     console.log(displayValue);
 }
 
-function ifInputClear(){
+const ifInputClear = () =>{
     displayValue = "0";
     firstValue = null;
     operator = null;
